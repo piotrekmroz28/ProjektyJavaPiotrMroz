@@ -4,16 +4,37 @@
  */
 package symulacjaodbioruodpadow;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPanel;
+
 /**
  *
  * @author piotr
  */
 public class Main extends javax.swing.JFrame {
 
+    static ArrayList<Producer> producerCont;
+
+    static ArrayList<TrashReceiverPoint> receiverCont;
+
+    static ArrayList<TrashTruck> truckCont;
+    
+    static boolean simEnd;
+    
     /**
      * Creates new form Main
      */
     public Main() {
+        producerCont = new ArrayList<Producer>();
+        receiverCont = new ArrayList<TrashReceiverPoint>();
+        truckCont = new ArrayList<TrashTruck>();
+        
         initComponents();
     }
 
@@ -26,7 +47,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new MyFrame();
+        jPanel1 = new MyPanel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -64,14 +85,39 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButton3.setText("Dodaj P. Odbioru");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Start Symulacji");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Stop Symulacji");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Zapisz Dane");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("WczytajDane");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -130,13 +176,145 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    static MyPoint getFreePosition(JPanel panel)
+    {
+        boolean isOverlap = false;
+        int tryCount = 0;
+        int x;
+        int y;
+
+        do
+        {
+            x = (int) (Math.random() * panel.getWidth());
+            y = (int) (Math.random() * panel.getHeight());
+
+            isOverlap = false;
+            tryCount++;
+            for (Producer p : producerCont)
+            {
+                if ((Math.abs(p.getX() - x) <= 20) && (Math.abs(p.getY() - y) <= 20))
+                {
+                    isOverlap = true;
+                    break;
+                }
+            }
+            for (TrashReceiverPoint r : receiverCont)
+            {
+                if ((Math.abs(r.getX() - x) <= 20) && (Math.abs(r.getY() - y) <= 20))
+                {
+                    isOverlap = true;
+                    break;
+                }
+            }
+            for (TrashTruck t : truckCont)
+            {
+                if ((Math.abs(t.getX() - x) <= 20) && (Math.abs(t.getY() - y) <= 20))
+                {
+                    isOverlap = true;
+                    break;
+                }
+            }
+            if (tryCount > 1000)
+            {
+                break;
+            }
+        } while (isOverlap == true);
+
+        if (isOverlap == true)
+        {
+            return null;
+        } else
+        {
+            MyPoint wynik = new MyPoint(x, y);
+            return wynik;
+        }
+    }
+    
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        MyPoint punkt = getFreePosition(jPanel2);
+        if (punkt == null)
+        {
+            System.out.println("Brak miejsca dla kolejnego Ĺšmieciarki");
+        } else
+        {
+            TrashTruck t = new TrashTruck(punkt.x, punkt.y, 0, 100);
+            truckCont.add(t);
+            jPanel2.repaint();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        MyPoint punkt = getFreePosition(jPanel2);
+        if (punkt == null)
+        {
+            System.out.println("Brak miejsca dla kolejnego Producenta");
+        } else
+        {
+            Producer p = new Producer(punkt.x, punkt.y, 100);
+            producerCont.add(p);
+            jPanel2.repaint();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        MyPoint punkt = getFreePosition(jPanel2);
+        if (punkt == null)
+        {
+            System.out.println("Brak miejsca dla kolejnego Odbiorcy");
+        } else
+        {
+            TrashReceiverPoint r = new TrashReceiverPoint(punkt.x, punkt.y, false, 0);
+            receiverCont.add(r);
+            jPanel2.repaint();
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        simEnd = false;
+        MyClock z = new MyClock(jPanel2);
+        z.start();
+        jButton6.setEnabled(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        simEnd = true;
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        FileOutputStream p1;
+        try
+        {
+            p1 = new FileOutputStream("plik.txt");
+
+            ObjectOutputStream s;
+
+            s = new ObjectOutputStream(p1);
+
+            s.writeObject(producerCont);
+            s.writeObject(receiverCont);
+            s.writeObject(truckCont);
+            s.close();
+        } catch (Exception ex)
+        {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try
+        {
+            FileInputStream p2 = new FileInputStream("plik.txt");
+            ObjectInputStream s = new ObjectInputStream(p2);
+            producerCont = (ArrayList<Producer>) s.readObject();
+            receiverCont = (ArrayList<TrashReceiverPoint>) s.readObject();
+            truckCont = (ArrayList<TrashTruck>) s.readObject();
+            s.close();
+            jPanel2.repaint();
+        } catch (Exception e)
+        {}
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
