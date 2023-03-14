@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c13f34a5-31fe-4c4d-a706-0609aa1392e5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/categories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/questions.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/IdeasApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/QuiteIdeasApplicationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/dao/CategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/dao/QuestionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/handlers/AnswerCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/handlers/BaseCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/handlers/CategoryCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/handlers/CommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/handlers/HelpCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/handlers/QuestionCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/handlers/QuiteCommandHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/model/Answer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/model/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/model/UserInputCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/model/UserInputManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ideas/ideas/src/test/java/piotrmroz/model/UserInputCommandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ideas/ideas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ideas/ideas/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ideas/ideas/src/main/java/piotrmroz/Main.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2N0eEgqF9iZJVEbaxoJWYsnw4Hk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "G:/ProjektyJava/FirstSpring/FirstSpring/pom.xml"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c13f34a5-31fe-4c4d-a706-0609aa1392e5" name="Changes" comment="" />
+      <created>1678805319202</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678805319202</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

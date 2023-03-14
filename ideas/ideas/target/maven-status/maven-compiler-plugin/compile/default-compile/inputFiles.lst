@@ -1,0 +1,17 @@
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\IdeasApplication.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\model\UserInputManager.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\QuiteIdeasApplicationException.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\model\Category.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\handlers\AnswerCommandHandler.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\model\Question.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\handlers\BaseCommandHandler.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\dao\CategoryDao.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\model\UserInputCommand.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\model\Answer.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\handlers\HelpCommandHandler.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\dao\QuestionDao.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\handlers\CategoryCommandHandler.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\handlers\QuestionCommandHandler.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\Action.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\handlers\CommandHandler.java
+G:\ProjektyJava\ideas\ideas\src\main\java\piotrmroz\handlers\QuiteCommandHandler.java
