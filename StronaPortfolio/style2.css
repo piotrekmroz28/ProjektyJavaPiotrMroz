@@ -1,0 +1,203 @@
+html {
+    background-color: rgb(122, 122, 122);
+    width: 100%;
+    height: 100%;
+    min-width: 340px;
+    background-image: url(graphics/tlo3.jpg);
+
+}
+
+header {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgb(0, 0, 0, 0));
+    height: 170px;
+    width: 100%;
+    position: absolute;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+.grafikaTytul {
+    height: 30px;
+    width: 220px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 28px;
+    font-family: Aladin;
+    vertical-align: top;
+    font-weight: 100;
+    text-align: center;
+    cursor: default;
+    color: white;
+}
+
+.przycisk_menu_glowne {
+    font-weight: 300;
+    font-family: Alegreya SC;
+    color: white;
+    width: auto;
+    float: left;
+}
+
+.menu {
+    width: 100%;
+    float: left;
+    height: calc(100% - 24px);
+    padding: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.lewyMedia {
+    position: absolute;
+    left: 0px;
+    top: 200px;
+    height: auto;
+    width: 40px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
+.ikonkaSocialMedia {
+    width: 100%;
+}
+
+.kafelekpodstawowy {
+    width: calc(25% - 20px);
+    height: 160px;
+    float: left;
+    margin: 10px;
+    background-color: rgb(204, 223, 202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ukryty {
+    height: calc(100% - 6px);
+    width: calc(100% - 6px);
+    font-size: 0px;
+    padding: 3px;
+}
+
+.ukryty:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+.Zdjecie {
+    width: 300px;
+    margin-top: 15px;
+}
+
+.tdOpisowe {
+    text-align: center;
+    border-radius: 20px;
+    font-family: 'Englebert', sans-serif;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.upperbody {
+    position: absolute;
+    height: auto;
+    width: auto;
+    top: 70px;
+    margin: auto;
+    cursor: pointer;
+}
+
+main {
+    padding-top: 50px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: auto;
+    max-width: 1200px;
+    min-width: 340px;
+}
+
+footer {
+    height: 20px;
+    background-color: darkmagenta;
+}
+
+.kafelekDuzyKurs{
+    width: 100%;
+    height: calc(100%); 
+    background-color: rgb(204, 223, 202);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*------------------ Menu rozwijane ----------------*/
+
+
+/* ------------------------CZĘŚĆ-GÓRNA-MENU------------------------ */
+
+@media (min-width: 1100px) {
+    .grafikaTytul {
+        float: left;
+    }
+    .Menu {
+        float: left;
+    }
+    header {
+        height: 50px;
+    }
+    main {
+        padding-top: 50px;
+        overflow: auto;
+        width: calc(100% - 20px);
+        height: calc(100% - 40px - 20px - 20px);
+    }
+    .menu {
+        width: calc(100% - 250px - 10px);
+    }
+    /* ---------- Zmiana działania menu -----------*/
+    ol>li {
+        float: left;
+        width: calc(20% - 1px);
+    }
+    .przycisk_menu_glowne {
+        height: calc(100% - 4px);
+        font-size: 13px;
+        margin-left: 30px;
+    }
+    .przycisk_menu_glowne:hover {
+        border-bottom: 2px solid white;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1100px) and (min-width: 500px) {
+    .grafikaTytul {
+        width: calc(100% - 30px);
+    }
+    .kafelekpodstawowy {
+        width: calc(33% - 20px);
+    }
+
+}
+
+@media (max-width: 500px) {
+    .grafikaTytul {
+        width: calc(100% - 30px);
+    }
+    .kafelekpodstawowy {
+        width: calc(100% - 20px);
+    }
+}
